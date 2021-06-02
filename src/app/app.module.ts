@@ -15,13 +15,23 @@ import { AddEmployeComponent } from './component/employes/add/add-employe/add-em
 import { UpdateEmployeComponent } from './component/employes/update/update-employe/update-employe.component';
 import { AddDepartementComponent } from './component/departements/add/add-departement/add-departement.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsModuleComponent } from './details-module/details-module.component';
 import { DetailsProjetComponent } from './details-projet/details-projet.component';
 import { UpdateTacheComponent } from './component/taches/update-tache/update-tache.component';
 import { AddModuleComponent } from './component/modules/add-module/add-module.component';
 import { AddTacheComponent } from './component/taches/add-tache/add-tache.component';
 import { UpdateModuleComponent } from './component/modules/update-module/update-module.component';
+import { RegisterComponent } from './component/register/register.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { BoardAdminComponent } from './component/board-admin/board-admin.component';
+import { BoardModeratorComponent } from './component/board-moderator/board-moderator.component';
+import { BoardUserComponent } from './component/board-user/board-user.component';
+import { HomeComponent } from './component/home/home.component';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,15 +51,22 @@ import { UpdateModuleComponent } from './component/modules/update-module/update-
     UpdateTacheComponent,
     AddTacheComponent,
     AddModuleComponent,
-    UpdateModuleComponent
+    UpdateModuleComponent,
+    RegisterComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

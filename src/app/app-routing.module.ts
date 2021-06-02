@@ -15,6 +15,12 @@ import { DetailsModuleComponent } from './details-module/details-module.componen
 import { UpdateTacheComponent } from './component/taches/update-tache/update-tache.component';
 import { AddModuleComponent } from './component/modules/add-module/add-module.component';
 import { AddTacheComponent } from './component/taches/add-tache/add-tache.component';
+import { HomeComponent } from './component/home/home.component';
+import { BoardAdminComponent } from './component/board-admin/board-admin.component';
+import { BoardModeratorComponent } from './component/board-moderator/board-moderator.component';
+import { BoardUserComponent } from './component/board-user/board-user.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { RegisterComponent } from './component/register/register.component';
 
 const routes: Routes = [
   { path: 'employe/list', component: EmployesComponent},
@@ -32,8 +38,14 @@ const routes: Routes = [
   { path: 'departement/update/:id', component: UpdateDepartementComponent},
   { path: 'module/add', component: AddModuleComponent},
   { path: 'tache/add', component: AddTacheComponent},
-  { path: 'login', component: LoginComponent},
-  { path: '**', redirectTo: 'login'},
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'user', component: BoardUserComponent },
+  { path: 'mod', component: BoardModeratorComponent },
+  { path: 'admin', component: BoardAdminComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 
