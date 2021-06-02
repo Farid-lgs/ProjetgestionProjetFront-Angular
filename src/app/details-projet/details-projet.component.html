@@ -1,0 +1,51 @@
+<h1 class="text-center">Liste des employés du projet {{employes[0].projet.titre}}</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Prénom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Projet</th>
+      <th scope="col">Département</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employe of employes">
+      <td>{{employe.prenom}}</td>
+      <td>{{employe.nom}}</td>
+      <td>{{employe.mail}}</td>
+      <td>{{employe.projet.titre}}</td>
+      <td>{{employe.departement.libelle}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 class="text-center">Liste des modules du projet {{employes[0].projet.titre}}</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Date début</th>
+      <th scope="col">Date fin estimée</th>
+      <th scope="col">Date fin réel</th>
+      <th scope="col">Détails module</th>
+      <th scope="col">Modifier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let module of modules">
+      <td>{{module.nom}}</td>
+      <td>{{module.datedebut | date:'shortDate'}}</td>
+      <td>{{module.datefinestimee | date:'shortDate'}}</td>
+      <td>{{module.datefinreel | date:'shortDate'}}</td>
+      <td>
+        <a routerLink="module/{{module.idmodule}}" class="btn btn-primary">Info module</a>
+      </td>
+      <td>
+        <a routerLink="module/update/{{module.idmodule}}" class="btn btn-primary">Modifier</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

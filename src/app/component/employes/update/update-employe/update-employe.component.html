@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Entrez l'employé à modifier</h5>
+          <form class="form-signin" *ngIf="updateEmployeForm" [formGroup]="updateEmployeForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <input type="hidden" formControlName="idemploye" class="form-control col-sm-10" id="idemploye"/>
+            </div>
+            <div class="form-group">
+              <label for="mail">Email <span class="text-danger">*</span> :</label>
+              <input type="text" formControlName="mail" class="form-control col-sm-10" id="mail" placeholder="Entrez l'email de l'employé" />
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom <span class="text-danger">*</span> :</label>
+              <input type="text" formControlName="nom" class="form-control col-sm-10" id="nom" placeholder="Entrez le nom de l'employé" />
+            </div>
+            <div class="form-group">
+              <label for="prenom">Prénom <span class="text-danger">*</span> :</label>
+              <input type="text" formControlName="prenom" class="form-control col-sm-10" id="prenom" placeholder="Entrez le prénom de l'employé" />
+            </div>
+            <div class="form-group">
+              <label for="pwd">Mot de passe <span class="text-danger">*</span> :</label>
+              <input type="password" formControlName="pwd" class="form-control col-sm-10" id="pwd" placeholder="Entrez mot de passe de l'employé" />
+            </div>
+            <div class="form-group">
+              <label class="mr-sm-2" for="iddepartement">Choisir un département <span class="text-danger">*</span> :</label>
+              <select formControlName="iddepartement" id="iddepartement" class="custom-select mr-sm-2">
+                <option *ngFor="let departement of departements" value="{{departement.iddepartement}}">{{departement.libelle}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="mr-sm-2" for="idprojet">Choisir un projet <span class="text-danger">*</span> :</label>
+              <select formControlName="idprojet" id="idprojet" class="custom-select mr-sm-2">
+                <option *ngFor="let projet of projets" value="{{projet.idprojet}}">{{projet.titre}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="mr-sm-2" for="idrole">Choisir un rôle <span class="text-danger">*</span> :</label>
+              <select formControlName="idrole" id="idrole" class="custom-select mr-sm-2">
+                <option *ngFor="let role of roles" value="{{role.idrole}}">{{role.libelle}}</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

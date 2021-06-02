@@ -1,0 +1,35 @@
+<h1 class="text-center">Employe</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Prénom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mot de passe</th>
+      <th scope="col">Département</th>
+      <th scope="col">Projet</th>
+      <th scope="col">Role</th>
+      <th scope="col">Supprimer</th>
+      <th scope="col">Modifier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employe of employes">
+      <td>{{employe.prenom}}</td>
+      <td>{{employe.nom}}</td>
+      <td>{{employe.mail}}</td>
+      <td>{{employe.pwd}}</td>
+      <td>{{employe.departement.libelle}}</td>
+      <td>
+        <a routerLink="../../projet/{{employe.projet.idprojet}}" class="btn btn-primary">{{employe.projet.titre}}</a>
+      </td>
+      <td>{{employe.role.libelle}}</td>
+      <td>
+        <button (click)="onRemoveEmploye(employe.idemploye)" class="btn btn-primary">Supprimer</button>
+      </td>
+      <td>
+        <a (click)="updateEmploye(employe.idemploye)" class="btn btn-primary">Modifier</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

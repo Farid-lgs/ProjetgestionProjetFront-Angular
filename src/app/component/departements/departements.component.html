@@ -1,0 +1,21 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let departement of departements ">
+      <td>{{departement.iddepartement}}</td>
+      <td>{{departement.libelle}}</td>
+
+      <td>
+        <button (click)="onRemoveDepartement(departement.iddepartement)" class="btn btn-primary">Supprimer</button>
+
+        <a (click)="updateDepartement(departement.iddepartement)" class="btn btn-primary">Modifier</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

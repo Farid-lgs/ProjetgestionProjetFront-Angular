@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Connectez-vous</h5>
+          <form class="form-signin" [formGroup]="formUser" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="username">Username <span class="text-danger">*</span> :</label>
+              <input type="username" formControlName="username" class="form-control col-sm-12" id="mail" aria-describedby="username" placeholder="Entrez le username">
+            </div>
+            <div class="form-group">
+              <label for="password">Mot de passe <span class="text-danger">*</span> :</label>
+              <input type="password" formControlName="password" class="form-control col-sm-12" id="password" placeholder="Entrez le mot de passe">
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

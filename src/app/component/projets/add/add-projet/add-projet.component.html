@@ -1,0 +1,47 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Entrez le projet à ajouter</h5>
+          <form class="form-signin" [formGroup]="addProjetForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="client">Nom client:</label>
+              <input type="text" formControlName="client" class="form-control col-sm-10" id="client" placeholder="Entrez nom du projet" />
+            </div>
+            <div class="form-group">
+              <label for="code">Code :</label>
+              <input type="number" formControlName="code" class="form-control col-sm-10" id="code" placeholder="Entrez code du projet" />
+            </div>
+            <div class="form-group">
+              <label for="titre">Titre :</label>
+              <input type="text" formControlName="titre" class="form-control col-sm-10" id="titre" placeholder="Entrez titre du projet" />
+            </div>
+            <div class="form-group">
+              <label for="type">Type :</label>
+              <input type="text" formControlName="type" class="form-control col-sm-10" id="type" placeholder="Entrez type du projet" />
+            </div>
+            <div class="form-group">
+              <label for="description">Description :</label>
+              <input type="text" formControlName="description" class="form-control col-sm-10" id="description" placeholder="Entrez description du projet" />
+            </div>
+            <div class="form-group">
+              <label for="datedebut">Date début :</label>
+              <input type="date" formControlName="datedebut" class="form-control col-sm-10" id="datedebut" placeholder="Entrez date du projet" />
+            </div>
+            <div class="form-group">
+              <label for="datefinestimee">Date fin estimée :</label>
+              <input type="date" formControlName="datefinestimee" class="form-control col-sm-10" id="datefinestimee" placeholder="Entrez date fin estimée du projet" />
+            </div>
+            <div class="form-group">
+              <label for="datefinreel">Date fin réel :</label>
+              <input type="date" formControlName="datefinreel" class="form-control col-sm-10" id="datefinreel" placeholder="Entrez date fin réel (si connu) du projet" />
+            </div>
+            <button type="submit" [disabled]="addProjetForm.invalid" class="btn btn-primary">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
