@@ -15,37 +15,31 @@ import { DetailsModuleComponent } from './details-module/details-module.componen
 import { UpdateTacheComponent } from './component/taches/update-tache/update-tache.component';
 import { AddModuleComponent } from './component/modules/add-module/add-module.component';
 import { AddTacheComponent } from './component/taches/add-tache/add-tache.component';
-import { HomeComponent } from './component/home/home.component';
-import { BoardAdminComponent } from './component/board-admin/board-admin.component';
-import { BoardModeratorComponent } from './component/board-moderator/board-moderator.component';
-import { BoardUserComponent } from './component/board-user/board-user.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { RegisterComponent } from './component/register/register.component';
+import { AuthGuard } from './guard/auth/auth.guard';
+import { AdminGuard } from './guard/admin/admin.guard';
 
 const routes: Routes = [
-  { path: 'employe/list', component: EmployesComponent},
-  { path: 'employe/add', component: AddEmployeComponent},
-  { path: 'employe/update/:id', component: UpdateEmployeComponent},
-  { path: 'projet/list', component: ProjetsComponent},
-  { path: 'projet/add', component: AddProjetComponent},
-  { path: 'projet/update/:id', component: UpdateProjetComponent},
-  { path: 'projet/:id', component: DetailsProjetComponent},
-  { path: 'projet/:id/module/:idModule', component: DetailsModuleComponent},
-  { path: 'projet/:id/module/:idModule/tache/update/:idTache', component: UpdateTacheComponent},
-  { path: 'projet/:id/module/update/:idModule', component: UpdateEmployeComponent},
-  { path: 'departement/list', component: DepartementsComponent},
-  { path: 'departement/add', component: AddDepartementComponent},
-  { path: 'departement/update/:id', component: UpdateDepartementComponent},
-  { path: 'module/add', component: AddModuleComponent},
-  { path: 'tache/add', component: AddTacheComponent},
-  { path: 'home', component: HomeComponent },
+  { path: 'employe/list', component: EmployesComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'employe/add', component: AddEmployeComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'employe/update/:id', component: UpdateEmployeComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'projet/list', component: ProjetsComponent, canActivate: [AuthGuard]},
+  { path: 'projet/add', component: AddProjetComponent, canActivate: [AuthGuard]},
+  { path: 'projet/update/:id', component: UpdateProjetComponent, canActivate: [AuthGuard]},
+  { path: 'projet/:id', component: DetailsProjetComponent, canActivate: [AuthGuard]},
+  { path: 'projet/:id/module/:idModule', component: DetailsModuleComponent, canActivate: [AuthGuard]},
+  { path: 'projet/:id/module/:idModule/tache/update/:idTache', component: UpdateTacheComponent, canActivate: [AuthGuard]},
+  { path: 'projet/:id/module/update/:idModule', component: UpdateEmployeComponent, canActivate: [AuthGuard]},
+  { path: 'departement/list', component: DepartementsComponent, canActivate: [AuthGuard]},
+  { path: 'departement/add', component: AddDepartementComponent, canActivate: [AuthGuard]},
+  { path: 'departement/update/:id', component: UpdateDepartementComponent, canActivate: [AuthGuard]},
+  { path: 'module/add', component: AddModuleComponent, canActivate: [AuthGuard]},
+  { path: 'tache/add', component: AddTacheComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent },
-  { path: 'mod', component: BoardModeratorComponent },
-  { path: 'admin', component: BoardAdminComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 
