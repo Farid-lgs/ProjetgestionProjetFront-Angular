@@ -1,4 +1,13 @@
 # GestionProjet
+
+Stack :
+
+Bootstrap
+
+Angular 11
+
+Spring Boot ( https://github.com/Farid-lgs/ProjetgestionProjetBack-Spring )
+
 ![image](https://user-images.githubusercontent.com/80573575/120616514-98d28900-c459-11eb-89f0-454d50e89992.png)
 ![image](https://user-images.githubusercontent.com/80573575/120616836-d8997080-c459-11eb-9d25-1c54559e5c77.png)
 ![image](https://user-images.githubusercontent.com/80573575/120616904-e7802300-c459-11eb-8a7a-8759e0d10e4d.png)
