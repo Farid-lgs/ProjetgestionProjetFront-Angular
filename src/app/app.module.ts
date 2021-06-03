@@ -7,7 +7,6 @@ import { EmployesComponent } from './component/employes/employes.component';
 import { ProjetsComponent } from './component/projets/projets.component';
 import { DepartementsComponent } from './component/departements/departements.component';
 import { LoginComponent } from './component/login/login.component';
-import { MenuComponent } from './component/menu/menu.component';
 import { UpdateDepartementComponent } from './component/departements/update/update-departement/update-departement.component';
 import { AddProjetComponent } from './component/projets/add/add-projet/add-projet.component';
 import { UpdateProjetComponent } from './component/projets/update/update-projet/update-projet.component';
@@ -24,10 +23,6 @@ import { AddTacheComponent } from './component/taches/add-tache/add-tache.compon
 import { UpdateModuleComponent } from './component/modules/update-module/update-module.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ProfileComponent } from './component/profile/profile.component';
-import { BoardAdminComponent } from './component/board-admin/board-admin.component';
-import { BoardModeratorComponent } from './component/board-moderator/board-moderator.component';
-import { BoardUserComponent } from './component/board-user/board-user.component';
-import { HomeComponent } from './component/home/home.component';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 
 
@@ -39,7 +34,6 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
     ProjetsComponent,
     DepartementsComponent,
     LoginComponent,
-    MenuComponent,
     AddDepartementComponent,
     UpdateDepartementComponent,
     AddProjetComponent,
@@ -54,10 +48,6 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
     UpdateModuleComponent,
     RegisterComponent,
     ProfileComponent,
-    BoardAdminComponent,
-    BoardModeratorComponent,
-    BoardUserComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,

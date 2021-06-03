@@ -12,6 +12,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  public isLoggedIn = false;
+  public adminLogged = false;
+
+
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
@@ -28,4 +32,20 @@ export class AuthService {
       password
     }, httpOptions);
   }
+
+  isAuthenticated(): boolean {
+    return this.isLoggedIn;
+  }
+
+  setAuthenticated(authenticated: boolean) {
+    this.isLoggedIn = authenticated;
+  }
+
+  isAdminLogged(): boolean {
+    return this.adminLogged;
+  }
+  setAdminLogged(adminLogged: boolean){
+    this.adminLogged = adminLogged;
+  }
+
 }

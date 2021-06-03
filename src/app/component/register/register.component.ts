@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   };
   isSuccessful = false;
   isSignUpFailed = false;
-  errorMessage = '';
+  errorMessage: string;
 
   constructor(private authService: AuthService) { }
 
