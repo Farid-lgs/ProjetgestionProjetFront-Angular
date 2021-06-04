@@ -1,10 +1,18 @@
 # GestionProjet
 
-Stack :
+Dans le cadre de ce projet, j’ai réalisé les tâches suivantes :
 
-Bootstrap
+● Conception et réalisation des nouvelles fonctionnalités de bout en bout
+● Développement de la partie back-end de la solution.
+● Implémentation des web services REST.
+● Sécuriser l’application avec les outils Spring Security en utilisant JWT.
+● Suivi et correction d’anomalies.
+● Travaille en mode Merge/Request (Git)
 
-Angular 11
+
+
+Environment technique: Java , Spring Boot, Spring Data Rest, Spring Security JWT,
+JPA/Hibernate, Maven, Oracle, Node JS, Angular, Swagger
 
 Spring Boot ( https://github.com/Farid-lgs/ProjetgestionProjetBack-Spring )
 
